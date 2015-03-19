@@ -10,9 +10,9 @@ var users = require('./routes/users');
 
 var app = express();
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 8081);
 app.set('nc-user', process.env.NC_USER);
-app.set('nc-key', process.env.NC_KEY);
+app.set('nc-key', );
 app.set('nc-ip', process.env.NC_IP);
 
 
