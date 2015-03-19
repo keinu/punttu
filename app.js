@@ -12,6 +12,10 @@ var app = express();
 
 app.set('port', process.env.PORT || 3000);
 
+console.log("PORT: ", process.env.PORT);
+console.log("NC_IP: ", process.env.NC_IP);
+console.log("NC_USER: ", process.env.NC_USER);
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
