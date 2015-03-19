@@ -1,0 +1,155 @@
+extends layout
+
+block content
+
+	header.intro
+		.intro-body
+			.container
+				.col-md-8.col-md-offset-2
+					h1.brand-heading
+						| punttu
+					p.intro-text
+						| Internet domeinu baten bila?
+						br
+						| Domeinu bat eta 
+						em punttu
+
+					a.btn.btn-circle.page-scroll(href="#aurkitu")
+						i.fa.fa-angle-double-down.animated
+
+
+
+	section#aurkitu
+		.container
+			.row
+				.col-xs-12
+			
+					h2 Domeinu bat bilatu
+
+					form(role="form")
+						.form-group
+							br
+							label(for="domain") Sar ezazu zure gogozko domeinua eta libre denez aurkitu
+							input#domain.form-control.input-lg(type="text", name="domain",
+								value="zuredomeinuberria",
+								placeholder="zuredomeinua",
+								autocomplete="off",
+								spellcheck='false')
+
+					#results
+
+				.col-lg-12.libre(style="display:none;")
+					p.lead
+						strong Badirudi domeinu hau libre dela
+					p
+
+	section#nolaerosi
+
+		.container.relative
+   
+			.row
+
+				.col-xs-12
+					h2 Domeinuei buruz
+				
+				.col-xs-12.col-sm-6
+
+					h3 Domeinu bat erosi
+					p
+						|	Teknikoki domeinu bat ez da `erosten` baina alokatzen da epe batentzat.
+						|	Internet domeinu bat <em>Registrar</em> baten bidez erosten ahal da.<br />
+						|	Domeinua libre bada urtero eregistratu daiteke gehienetan 10 Euro baino guttiagotan. 
+						|	Erregistrazio honek zure domeinu berria zure izenean dela seguratuko du epe osoarentzat.
+						|	Epe hri pasa eta, domeina ez da gehiago zuri erreserbatua izanen eta merkatuan berriro libre bihurtuko da.
+
+					p
+						|	Domeinuaren alokairua ez bada arraberritzen, erabili duzun <em>registrar</em>-ak hilabete batez gordeko zuk berriz 
+						|	eskuratu nahi baduzu. Epe honen buruan, domeinua berriro salgai izango da eta gehienetan espezializatuak diren enpresek berriz 
+						|	erosten dute <em>domain parking</em>-a egiteko
+
+
+					h3 
+						em Domain parking
+						| -a
+					
+					p 	
+						em Domain parking
+						|	-aren helburua zure ohizko domeinuak zuen traffikoa edo bisitariei publizitate eskaintzea da.<br />
+						|	Bestalde, domeinua beste norbaitena izan arren nahi baduzu berreskuratu, hastapenean erosi duzun prezioa baino askoz garestiagoa
+						|	izanen da eta enkantetan berriz zureganatzen ahako duzu zorioneko bazira.
+
+					p
+						|	Domeinuak errelatiboki merke direnez, interesa duen domeinu bat erosten ahal da etorkizunean erabiltzeko asmoz edo saltzeko asmoz
+					
+					p
+						|	Horretarako aholku gisa, domeinu bat erostean, ziurtatu berrikuntza automatikoki ezarria dela. 
+						|	Edo bestela, aldi batez 10 urterako erosi zure domeinua (10 urteren buruan zure domeinua arraberitzeari pentsatu beharko duzu ...).
+
+
+
+				.col-12.col-sm-6
+
+					h3 Nahi dudan domeinua hartua da :(
+					p
+						|	Nahi duzun domeinua jada hartua bada, posible da zureganatzea: <br />
+						|	Domeinua ez bada salgai, Jabearekin harremanetan sartzen ahal da eta proposamen bat egin.
+						|	Jabeak zure proposamena onartzen badu domeinua bere izenetik zure izenera trasferituko du.
+					
+					p
+						|	Domeinua ez bada erabilia, eta domeinu honek zure enpresaren edo ekoizkinaren izena badu, legalki 
+						|	zuri itzuli daiteke domeinua izenari legezko jabetza duzulako. 
+						|	Edonork izen hori beste serbitzu batentzat erabiltzea legearen kontra delako.
+
+					h3 Nor den jabea aurkitu
+					p
+						|	Domeinu baten jabearekin harremanetan sartzeko, <em>whois</em> delako tresnak erabili daitezke.
+						|	<em>Whoi</em> datubaseak domeinu guzien kotaktu datuak biltzen ditu.<br />
+						|	Pribatutasunari buruz, informazio batzu datubase hortatik ezkutatzen ahal dira,
+						|	baina jabea beti emailez heltzen ahal da.<br />
+						|	Adibidez: Nor da <a href="http://www.who.is/whois/punttu.com" target="_blank" rel="nofollow">domeinu honen</a> jabea?
+					
+					p
+						|	Internet domeinu izenen merkatua haundia da, urtero bilioka Euro doatzi domeinuen sal-erosketan.
+					
+
+	footer#honiburuz
+		
+		.container.relative
+			.row-fluid
+				.col-12
+					h2 Honi buruz
+
+					p
+						|	Webgune hau Euskararen erabilpena Interneten sustatzeko egina da.
+					p
+						|	Nor naizen jakiteko eta nerekin harremanetan sartzeko nere gunea bisita ezazu helbide honetan
+						| 	<a href="http://www.keinu.net" title="Keinu">www.keinu.net</a> (Inglesez)
+
+		.container
+			.row-fluid
+				.col-lg-8.col-offset-2.text-center(style="padding-top:30px;")
+					p
+						|	© <a class="credits" href="http://www.keinu.net">www.keinu.net</a>
+
+
+	script#tpl(type="text/x-handlebars-template")
+		table.table
+			thead
+				tr
+					th Domeinua
+					th(colspan='2') Libre
+			tbody
+				| {{#each this}}
+				tr
+					td {{domain}} 
+					td {{#if available}}Libre da{{else}}Ez da libre{{/if}}
+					td {{#if available}}
+						| {{#if eus}}
+						a.btn.btn-xs.btn-block.btn-primary(href="http://www.domeinuak.eus/eu/erregistradoreak/", taget="_blank", role="button") Erregistradorea hautatu
+						| {{else}}
+						a.btn.btn-xs.btn-block.btn-primary(href="http://www.namecheap.com/?aff=80510", taget="_blank", role="button") NameCheap-ekin eskura ezazu
+						| {{/if}}
+						| {{/if}}
+				| {{/each}}
+
+
