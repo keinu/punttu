@@ -1,0 +1,27 @@
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+  <script type="text/javascript" src="/js/jquery.easing.min.js"></script>
+  <script type="text/javascript" src="/js/js.js"></script>
+  <script type="text/javascript" src="/js/grayscale.js"></script>
+  <script id="tpl" type="text/x-handlebars-template">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Domeinua</th>
+        <th colspan="2">Libre</th>
+      </tr>
+    </thead>
+    <tbody>{{#each this}}
+      <tr>
+        <td>{{domain}} </td>
+        <td>{{#if available}}Libre da{{else}}Ez da libre{{/if}}</td>
+        <td>
+          {{#if available}}
+          {{#if eus}}<a href="http://www.domeinuak.eus/eu/erregistradoreak/" taget="_blank" role="button" class="btn btn-xs btn-block btn-primary">Erregistradorea hautatu</a>{{else}}<a href="http://www.namecheap.com/?aff=80510" taget="_blank" role="button" class="btn btn-xs btn-block btn-primary">NameCheap-ekin eskura ezazu</a>{{/if}}
+          {{/if}}
+        </td>
+      </tr>{{/each}}
+    </tbody>
+  </table>
+</script>
