@@ -1,6 +1,6 @@
-"use strict";
-
 var domain = (function(el) {
+
+	"use strict";
 
 	var xhr;
 	var placeholder = $("#results");
@@ -9,7 +9,7 @@ var domain = (function(el) {
 
 		return !! domain.match(/[a-z0-9\-]/);
 
-	}
+	};
 
 	var check = function(domain) {
 
@@ -35,14 +35,14 @@ var domain = (function(el) {
 			placeholder.removeClass("loading");
 			el.removeClass("loading");
 
-		})
+		});
 
-	}
+	};
 
 	el.on("input", function() {
 
 		check(el.val());
 
-	})
+	});
 
 })($("#domain"));
