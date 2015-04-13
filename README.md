@@ -1,2 +1,0 @@
-# punttu
-Punttu.com
