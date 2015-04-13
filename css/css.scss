@@ -93,7 +93,7 @@ a {
         li {
             &.active {
                 outline: nonte;
-                background-color: fade($light, 30%);
+                background-color: $primary;
             }
             a {
                 -webkit-transition: background .3s ease-in-out;
@@ -103,7 +103,7 @@ a {
                 &:focus,
                 &.active {
                     outline: none;
-                    background-color: fade($light, 30%);
+                    background-color: $primary;
                 }
             }
         }
@@ -112,7 +112,7 @@ a {
 
 @media(min-width:767px) {
     .navbar {
-        padding: 20px 0;
+        padding: 0;
         border-bottom: none;
         letter-spacing: 1px;
         background: transparent;
@@ -135,7 +135,7 @@ a {
     display: table;
     width: 100%;
     height: auto;
-    padding: 100px 0;
+    padding: 150px 0;
     text-align: center;
     color: $light;
     background: url(../images/bg.jpg) no-repeat bottom center scroll;
@@ -160,7 +160,7 @@ a {
 @media(min-width:767px) {
     .intro {
         height: 100%;
-        padding: 0;
+        padding-top: 150px;
         .intro-body {
             .brand-heading {
                 font-size: 100px;

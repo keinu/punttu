@@ -29,6 +29,8 @@ var domain = (function(el) {
 
 		xhr = $.getJSON("http://www.mukuzu.com/domain/check/" + domain).done(function(data){
 
+			console.log(data);
+
 			var source  = $("#tpl").html();
 			var template = Handlebars.compile(source);
 			placeholder.html(template(data));
