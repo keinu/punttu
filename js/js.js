@@ -29,8 +29,6 @@ var domain = (function(el) {
 
 		xhr = $.getJSON("https://iacicc2lpb.execute-api.eu-west-1.amazonaws.com/production?domain=" + domain).done(function(data){
 
-			console.log(data);
-
 			var source  = $("#tpl").html();
 			var template = Handlebars.compile(source);
 			placeholder.html(template(data));
