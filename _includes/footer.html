@@ -15,14 +15,22 @@
     </thead>
     <tbody>{{#each this}}
       <tr>
-        <td>{{domain}} </td>
-        <td>{{#if available}}Libre da{{else}}Ez da libre{{/if}}</td>
+        <td>{{@key}}</td>
         <td>
-          {{#if available}}
-          {{#if eus}}<a href="http://www.domeinuak.eus/eu/erregistradoreak/" taget="_blank" role="button" class="btn btn-xs btn-block btn-primary">Erregistradorea hautatu</a>{{else}}<a href="http://www.namecheap.com/?aff=80510" taget="_blank" role="button" class="btn btn-xs btn-block btn-primary">NameCheap-ekin eskura ezazu</a>{{/if}}
+        {{#if this}}
+          Libre da
+        {{else}}
+          Ez da libre
+        {{/if}}
+        </td>
+        <td>
+          {{#if this}}
+            <a href="https://www.gandi.net/domain/suggest" taget="_blank" role="button" 
+              class="btn btn-xs btn-block btn-primary">Orain eskuratu</a>
           {{/if}}
         </td>
-      </tr>{{/each}}
+      </tr>
+      {{/each}}
     </tbody>
   </table>
   {% endraw %}
