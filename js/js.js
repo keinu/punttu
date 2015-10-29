@@ -27,7 +27,7 @@ var domain = (function(el) {
 		if (!isValid(domain))
 			return;
 
-		xhr = $.getJSON("http://www.mukuzu.com/domain/check/" + domain).done(function(data){
+		xhr = $.getJSON("https://iacicc2lpb.execute-api.eu-west-1.amazonaws.com/production?domain=" + domain).done(function(data){
 
 			console.log(data);
 
